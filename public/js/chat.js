@@ -3,7 +3,7 @@ let socket;
 
 const url = window.location.hostname.includes("localhost")
   ? "http://localhost:3000/api/auth/"
-  : "https://restserver-production-3553.up.railway.app/api/auth/";
+  : "https://node-socket-chat-production-6d46.up.railway.app/api/auth/";
 
 // HTML References
 const txtUid = document.querySelector("#txtUid");
@@ -113,6 +113,11 @@ txtMsg.addEventListener("keyup", ({ keyCode }) => {
 
   txtMsg.value = "";
 });
+
+btnLogout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location = 'index.html';
+})
 
 const main = async () => {
   await validateJWT();

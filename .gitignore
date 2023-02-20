@@ -1,6 +1,6 @@
 node_modules/
 *.rar
 *.zip
-
+.env
 uploads/products/**.*
 uploads/users/**.*
